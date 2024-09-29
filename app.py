@@ -4,12 +4,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import time
 
-WAIT_TIME = 4
-chrome_options = Options()
-# chrome_options.add_argument("--headless") 
-chromedriver_path = './chromedriver-mac-arm64/chromedriver'  
-service = Service(chromedriver_path)
-driver = webdriver.Chrome(service=service, options=chrome_options)
+WAIT_TIME = 2
+# Options().add_argument("--headless") 
+driver = webdriver.Chrome(service=Service('./chromedriver-mac-arm64/chromedriver'), options=Options())
 
 def visit_website():
     driver.get("https://campuschroniclesnyc.wixsite.com/blog")
